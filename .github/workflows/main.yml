@@ -39,8 +39,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/setup-python@v4
-    #  with:
-    #  python-version: '3.10' 
+     with:
+     python-version: '3.10' 
       - run: python p1.py
 
 
@@ -48,14 +48,14 @@ jobs:
       - name: Run a one-line script
         run: python $file $input-num-1
 
-# job2:
-#     # needs: job1
-#     runs-on: ubuntu-latest
+job2:
+    # needs: job1
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-python@v2
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
       
-#       - name: Run a second-line script
-#         run: |
-#           python $file1 $input-num-2      
+      - name: Run a second-line script
+        run: |
+          python $file1 $input-num-2      
